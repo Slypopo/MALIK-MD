@@ -7,7 +7,7 @@ cmd({ pattern: "insta", alias: ["ig"], desc: "download instagram videos", catego
   if (!/instagram/.test(txt)) return await citel.reply(`Please give me valid instagram video link..!`);
   let data;
   try{
-    data = await fetchJson(`(https://api.maher-zubair.tech/download/instagram?url=));
+    data = await fetchJson(`(https://api.maher-zubair.tech/download/instagram?url=${text})).json();}
   } catch (err) {
     return citel.reply(`An error occurred: ${err.message}`);
   }

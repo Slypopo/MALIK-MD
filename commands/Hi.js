@@ -1,29 +1,39 @@
-const makeWASocket = require('@whiskeysockets/baileys');
-
-const bot = makeWASocket();
-
-bot.on('message', async (message) => {
-  if (message.body === 'Malik') {
-    const audioBuffer = await fetchAudioFile('github.com/arkhan998/MALIK-MD/blob/main/Themes/auto_voice/Hacker status | ???? Bgm Ringtone | ???? Hacker Attitude status | #shorts?raw=true');
-    bot.sendMessage(message.from, audioBuffer, { audio: true });
+>const buttons = [
+  { 
+    name: "cta_copy", 
+    display_text: "Copy", 
+    id: "123456789", 
+    action: "default",
+    icon: "📋",
+    style: "button" 
+  },
+  { 
+    name: "cta_url", 
+    display_text: "Visit Google", 
+    url: "https://www.google.com", 
+    merchant_url: "https://www.google.com", 
+    action: "url",
+    icon: "🌐",
+    style: "link" 
+  },
+  { 
+    name: "cta_call", 
+    display_text: "Call Us", 
+    id: "message", 
+    action: "call",
+    icon: "📞",
+    style: "button" 
+  },
+  { 
+    name: "cta_reminder", 
+    display_text: "Set Reminder", 
+    id: "message", 
+    reminder_time: "2024-04-28T12:00:00Z", 
+    action: "reminder",
+    icon: "⏰",
+    style: "button" 
   }
-});
+];
 
-async function fetchAudioFile(filePath) {
-  // Implement your logic to read the audio file and return the audio buffer
-  // You can use fs.readFile or any other library to read the file
-  // Return the audio buffer
-}
-```
-Make sure to replace `'path/to/your/audio/file.mp3'` with the actual path to your audio file.
 
-Also, make sure to implement the `fetchAudioFile` function to read the audio file and return the audio buffer.
-
-You can use the `fs` library to read the file, for example:
-```
-const fs = require('fs');
-
-async function fetchAudioFile(filePath) {
-  const audioBuffer = await fs.readFile(filePath);
-  return audioBuffer;
-  }
+return await m.send(buttons, { body: "hi", footer: "hoi", title: "bti"}, "button")

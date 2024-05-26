@@ -4,7 +4,7 @@ const bot = makeWASocket();
 
 bot.on('message', async (message) => {
   if (message.body === 'Malik') {
-    const audioBuffer = await fetchAudioFile('path/to/your/audio/file.mp3');
+    const audioBuffer = await fetchAudioFile('github.com/arkhan998/MALIK-MD/blob/main/Themes/auto_voice/Hacker status | ???? Bgm Ringtone | ???? Hacker Attitude status | #shorts?raw=true');
     bot.sendMessage(message.from, audioBuffer, { audio: true });
   }
 });

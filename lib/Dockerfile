@@ -1,4 +1,4 @@
-FROM quay.io/sampandey001/secktor
+FROM quay.io/naveeddogar/kingmd
 RUN git clone https://github.com/arkhan998/MALIK-MD /root/arkhan998
 WORKDIR /root/arkhan998/
 RUN npm install npm@latest
